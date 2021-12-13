@@ -1,0 +1,26 @@
+--- 
+- 
+  become: false
+  become_method: enable
+  connection: network_cli
+  gather_facts: false
+  hosts: all
+  name: "Display Output of multiple show commands"
+  tasks: 
+    - 
+      cli_command: 
+        command: "{{ item }}"
+      name: "Get the config"
+      register: result
+      with_items: 
+        - "show ip access-lists TestACL-1 | include 150"
+        - "show ip access-lists TestACL-2 | include 250"
+        - "show run | include file|bgp"
+        - "show snmp user | i snmp-user"
+    - 
+      debug: 
+        msg: 
+          - "{{ result.results[0].stdout_lines }}"
+          - "{{ result.results[1].stdout_lines }}"
+          - "{{ result.results[2].stdout_lines }}"
+          - "{{ result.results[3].stdout_lines }}"
