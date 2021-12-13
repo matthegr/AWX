@@ -13,14 +13,12 @@
       name: "Get the config"
       register: result
       with_items: 
-        - "show ip access-lists TestACL-1 | include 150"
-        - "show ip access-lists TestACL-2 | include 250"
-        - "show run | include file|bgp"
-        - "show snmp user | i snmp-user"
+        - "show lldp"
+        - "show switch"
+        - "show run | include username"
     - 
       debug: 
         msg: 
           - "{{ result.results[0].stdout_lines }}"
           - "{{ result.results[1].stdout_lines }}"
           - "{{ result.results[2].stdout_lines }}"
-          - "{{ result.results[3].stdout_lines }}"
