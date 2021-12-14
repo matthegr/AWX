@@ -16,5 +16,5 @@
         - "show switch"
     -
       debug:
-        msg: 
-          - "{{ result.results[1].stdout_lines }}"
+        msg:
+          - "{{ result.results[0].stdout_lines }}"
