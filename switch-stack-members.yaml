@@ -1,24 +1,20 @@
---- 
-- 
+---
+-
   become: false
   become_method: enable
   connection: network_cli
   gather_facts: false
   hosts: all
   name: "Display Output of multiple show commands"
-  tasks: 
-    - 
-      cli_command: 
+  tasks:
+    -
+      cli_command:
         command: "{{ item }}"
       name: "Get the config"
       register: result
-      with_items: 
-        - "show lldp"
+      with_items:
         - "show switch"
-        - "show run | include username"
-    - 
-      debug: 
+    -
+      debug:
         msg: 
-          - "{{ result.results[0].stdout_lines }}"
           - "{{ result.results[1].stdout_lines }}"
-          - "{{ result.results[2].stdout_lines }}"
