@@ -2,6 +2,7 @@
 
 - name: Cisco show version example
   hosts: Hosts All
+  cisco.ios.ios_facts:
   gather_facts: false
 
   tasks:
