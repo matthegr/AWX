@@ -1,6 +1,6 @@
 ---
 - name: Show Version
-- hosts: LISD IDF3 3850
+- hosts: all
   gather_facts: false
   connection: local
   
