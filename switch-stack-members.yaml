@@ -8,7 +8,7 @@
   name: "Display Output of multiple show commands"
   tasks:
     -
-      cli_command:
+      ansible.netcommon.cli_command:
         command: "{{ item }}"
       name: "Get the config"
       register: result
