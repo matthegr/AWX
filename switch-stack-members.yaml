@@ -14,7 +14,7 @@
    - name: Verify ACL is present
      ios_command:
       provider: "{{ cli }}"
-        commands: show switch
+        show switch
 
    - name: SAVE CONFIG
      ios_config:
