@@ -1,5 +1,5 @@
 --
-- hosts: all
+- hosts: LISD IDF3 3850
 
   gather_facts: false
   connection: local
