@@ -5,16 +5,15 @@
   connection: network_cli
   gather_facts: false
   hosts: all
+  
   name: "Display Output of multiple show commands"
   tasks:
     -
-      cli_command:
-        command: "{{ item }}"
-      name: "Get the config"
-      register: result
-      with_items:
-        - "show switch"
-    -
+      cisco.ios.ios_command:
+        command:
+        - show switch
+        
+            -
       debug:
         msg:
           - "{{ result.results[0].stdout_lines }}"
