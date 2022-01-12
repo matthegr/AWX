@@ -1,19 +1,15 @@
 ---
--
-  become: false
-  become_method: enable
-  connection: network_cli
+
+- name: Cisco show version example
+  hosts: routers
   gather_facts: false
-  hosts: all
-  
-  name: "Display Output of multiple show commands"
+
   tasks:
-    -
-      cisco.ios.ios_command:
-        command:
-        - show switch
-        
-            -
+    - name: run show version on the routers
+      ios_command:
+        commands: show version | incl Version
+      register: output
+
+    - name: print output
       debug:
-        msg:
-          - "{{ result.results[0].stdout_lines }}"
+        var: output.stdout_lines
