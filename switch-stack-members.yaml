@@ -2,7 +2,7 @@
 
 - name: Cisco show version example
   hosts: Hosts All
-  gather_facts: false
+  cisco.ios.ios_facts: false
 
   tasks:
     - name: run show version on the routers
