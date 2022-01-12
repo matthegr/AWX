@@ -1,22 +1,20 @@
 ---
-- name: Show Version
-- hosts: all
+-
+  become: false
+  become_method: enable
+  connection: network_cli
   gather_facts: false
-  connection: local
-  
-  vars:
-    cli:
-      username: admin
-      password: LEcisc33e$
-      timeout: 100
-      
+  hosts: all
+  name: "Display Output of multiple show commands"
   tasks:
-   - name: Verify ACL is present
-     ios_command:
-      provider: "{{ cli }}"
-   - show switch
-
-   - name: SAVE CONFIG
-     ios_config:
-       authorize: yes
-       save: yes
+    -
+      cli_command:
+        command: "{{ item }}"
+      name: "Get the config"
+      register: result
+      with_items:
+        - "show switch"
+    -
+      debug:
+        msg:
+          - "{{ result.results[0].stdout_lines }}"
