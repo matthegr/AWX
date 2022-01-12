@@ -1,16 +1,21 @@
---
+---
+- name: Show Version
 - hosts: LISD IDF3 3850
-
   gather_facts: false
   connection: local
-
+  
+  vars:
+    cli:
+      username: admin
+      password: LEcisc33e$
+      timeout: 100
+      
   tasks:
    - name: Verify ACL is present
      ios_command:
-       commands:
+      provider: "{{ cli }}"
+      lines:
          - sh access-l
-       waitfor:
-         - result[0] contains 'permit 172.16.1.100'
 
    - name: SAVE CONFIG
      ios_config:
