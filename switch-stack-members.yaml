@@ -14,8 +14,7 @@
    - name: Verify ACL is present
      ios_command:
       provider: "{{ cli }}"
-      lines:
-         - sh access-l
+        commands: show switch
 
    - name: SAVE CONFIG
      ios_config:
