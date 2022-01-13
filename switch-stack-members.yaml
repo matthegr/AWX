@@ -1,10 +1,10 @@
 ---
--
-  ansible_connection: ansible.netcommon.network_cli
-  ansible_become_method: enable
-  ansible_network_os: cisco.ios.ios
-  hosts: all
-  name: "Display Output of multiple show commands"
+- name: Switch Stack Members
+  vars:
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_become_method: enable
+    ansible_network_os: cisco.ios.ios
+    hosts: all
   tasks:
     -
       cli_command:
