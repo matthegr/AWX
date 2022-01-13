@@ -1,9 +1,8 @@
 ---
 -
-  become: false
-  become_method: enable
   ansible_connection: ansible.netcommon.network_cli
-  gather_facts: false
+  ansible_become_method: enable
+  ansible_network_os: cisco.ios.ios
   hosts: all
   name: "Display Output of multiple show commands"
   tasks:
