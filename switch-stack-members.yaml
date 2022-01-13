@@ -6,13 +6,7 @@
     ansible_network_os: cisco.ios.ios
     hosts: all
   tasks:
-    -
-      cli_command:
-        command: "{{ item }}"
-      register: result
-      with_items:
-        - "show switch"
-    -
-      debug:
-        msg:
-          - "{{ result.results[0].stdout_lines }}"
+    - name: Show switch output
+      cisco.ios.ios_command:
+        commands: show switch
+      register: switch_output
