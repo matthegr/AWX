@@ -6,7 +6,6 @@
     ansible_network_os: cisco.ios.ios
     hosts: all
   tasks:
-    - name: Show switch output
+    - name: run show version on remote devices
       cisco.ios.ios_command:
-        commands: show switch
-      register: switch_output
+        commands: show version
