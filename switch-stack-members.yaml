@@ -6,10 +6,9 @@
     ansible_network_os: cisco.ios.ios
     hosts: all
   tasks:
-    -
+    - name: Show Switch Command
       cli_command:
         command: "{{ item }}"
-      name: "Get the config"
       register: result
       with_items:
         - "show switch"
