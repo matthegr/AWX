@@ -2,7 +2,7 @@
 -
   become: false
   become_method: enable
-  connection: network_cli
+  ansible_connection: ansible.netcommon.network_cli
   gather_facts: false
   hosts: all
   name: "Display Output of multiple show commands"
