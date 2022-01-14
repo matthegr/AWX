@@ -4,11 +4,5 @@
   gather_facts: false 
   tasks:
   - name: run show version on remote devices
-    network_cli:
-     commands:
-     - show version       
-  - name: show run on remote devices
-    become: true
-    cisco.ios.ios_command:
-     commands: 
-     - show run
+    ansible.netcommon.cli_command:
+    command: show version
