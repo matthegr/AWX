@@ -2,6 +2,6 @@
 - hosts: all
   gather_facts: false 
   tasks:
-    cisco.ios.ios_command:
+    cli_command:
       commands: 
         - show version
