@@ -2,7 +2,6 @@
 - name: cisco_sh_ver
   hosts: all
   gather_facts: false 
-  ansible_become: yes
   tasks:
   - name: run show version on remote devices
     cisco.ios.ios_command:
