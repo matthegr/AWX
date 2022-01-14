@@ -2,5 +2,4 @@
 - hosts: all
   gather_facts: false 
   tasks:
-    cli_command:
-      - show version
+    cli_command: show version
