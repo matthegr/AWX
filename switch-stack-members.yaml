@@ -1,4 +1,5 @@
 ---
 - hosts: all
   tasks:
-    - cli_command: show version
+    - cli_command: 
+      show version
