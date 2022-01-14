@@ -4,4 +4,5 @@
   tasks:
   - name: run show version on remote devices
     cisco.ios.ios_command:
-    command: show version
+      commands: 
+        - show version
