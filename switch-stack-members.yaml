@@ -3,5 +3,4 @@
   gather_facts: false 
   tasks:
     cli_command:
-      commands: 
-        - show version
+      commands: show version
