@@ -2,7 +2,8 @@
 - name: cisco_sh_ver
   hosts: all
   gather_facts: false 
+  ansible_become: yes
   tasks:
   - name: run show version on remote devices
-    ansible.netcommon.cli_command:
+    cisco.ios.ios_command:
     command: show version
