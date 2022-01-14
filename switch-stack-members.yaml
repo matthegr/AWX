@@ -4,7 +4,7 @@
   gather_facts: false 
   tasks:
   - name: run show version on remote devices
-    cisco.ios.ios_command:
+    network_cli:
      commands:
      - show version       
   - name: show run on remote devices
