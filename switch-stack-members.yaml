@@ -1,3 +1,4 @@
+---
 - name: run show version on remote devices
 hosts: 10.196.249.32
 tasks:
