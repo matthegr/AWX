@@ -1,8 +1,8 @@
 ---
-- name: run show version on remote devices
-- hosts: 10.196.249.32
-  gather_facts: false
-  connection: local
+name: run show version on remote devices
+hosts: 10.196.249.32
+gather_facts: false
+connection: local
   tasks:
   - name: Show version
     cisco.ios.ios_command:
