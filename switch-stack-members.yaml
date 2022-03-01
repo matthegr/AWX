@@ -4,4 +4,4 @@
 - tasks:
   - name: Show version
     cisco.ios.ios_command:
-      commands: show version
+    commands: show version
